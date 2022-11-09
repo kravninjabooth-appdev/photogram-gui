@@ -9,7 +9,18 @@ class UsersController < ApplicationController
   end
 
   def show
+    #Parameters: {"path_username"=>"austin"}
+    
+    url_username = params.fetch("path_username")
 
-    render({:template => "user_templates/show.html.erb"})
+    matching_usernames = User.where({:username => url_username})
+
+    the_user = matching_usernames.first
+
+    # if the_user == nil
+    #   redirect_to("/")
+    # else 
+      render({:template => "user_templates/show.html.erb"})
+  
   end
 end
