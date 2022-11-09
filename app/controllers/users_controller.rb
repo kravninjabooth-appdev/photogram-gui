@@ -7,4 +7,9 @@ class UsersController < ApplicationController
 
     render({:template => "user_templates/index.html.erb"})
   end
+
+  def show
+
+    render({:template => "user_templates/show.html.erb"})
+  end
 end
