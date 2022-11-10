@@ -17,4 +17,16 @@
     <th>Posted</th>
     <th></th>
   </tr>
+
+  <% @the_user.own_photos.each do |a_photo|%>
+  <tr>
+    <td>
+      <img src="<%=a_photo.image%>">
+    </td>
+    <td><%=a_photo.poster.username%></td>
+    <td><%=a_photo.caption%></td>
+    <td><%=a_photo.created_at%></td>
+    <td>Show details</td>
+  </tr>
+  <% end %>
 </table>
