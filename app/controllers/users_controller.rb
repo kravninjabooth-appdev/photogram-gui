@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
     matching_usernames = User.where({:username => url_username})
 
-    the_user = matching_usernames.first
+    @the_user = matching_usernames.first
 
     # if the_user == nil
     #   redirect_to("/")
