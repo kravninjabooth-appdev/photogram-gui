@@ -32,6 +32,8 @@ class PhotosController < ApplicationController
     the_photo.destroy
 
 
-    render({:template => "photo_templates/delete.html.erb"})
+    #render({:template => "photo_templates/delete.html.erb"})
+
+    redirect_to("/photos")
   end
 end
