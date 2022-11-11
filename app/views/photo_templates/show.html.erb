@@ -41,3 +41,45 @@
     </a>
   </dd>
 </dl>
+
+<h2>Comments</h2>
+
+<table>
+  <tr>
+    <th>Commenter</th>
+    <th>Comment</th>
+    <th>Posted</th>
+  </tr>
+
+  <% @the_photo.comments.each do |a_comment| %>
+
+  <tr>
+    <td>
+      <%= a_comment.commenter.username%>
+    </td>
+
+    <td>
+      <%=  a_comment.body%>
+    </td>
+
+    <td>
+      <%= a_comment.created_at%>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<h3>Add a new comment</h3>
+
+<form action="/insert_comment_record">
+  <label for="browser_photo_id">Photo ID</label>
+  <input id="browser_photo_id" type="text" value="805" name="input_photo_id">
+
+  <label for="browser_author_id">Author ID</label>
+  <input id="browser_author_id" type="text" name="input_author_id">
+
+  <label for="browser_comment">Comment</label>
+  <textarea id="browser_comment" name="input_body" placeholder="Enter a comment..."></textarea>
+
+  <button>Add comment</button>
+</form>
